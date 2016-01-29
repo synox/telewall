@@ -1,0 +1,179 @@
+{# This pages shows the call history. Callers can be blocked or unblocked by clicking a link.
+Note that this page is responsive - there is a representation for Desktop/Tablet and Smartphone.
+input variables: call_history
+#}
+{% extends "base.html" %}
+{% set active_page = "call_history" %}
+
+{% block content %}
+
+
+{% if not call_history %}
+Es wurden noch keine eingehenden Anrufe protokolliert.
+{% else: %}
+
+<div id="call_history">
+    <ul class="pagination paginationTop"></ul>
+    <table class="table">
+        <thead>
+        <tr class="hidden-xs">
+            <th>Anruf</th>
+            <th>Anrufer</th>
+            <th>Aktion</th>
+            <th>Anrufzeit</th>
+        </tr>
+        <tr class="visible-xs">
+            <th>Anruf</th>
+            <th>Aktion</th>
+        </tr>
+        </thead>
+        <tbody class="searchable list">
+        {% for call_record in call_history %}
+
+
+        {# each line is colored by its status. #}
+        {% if call_record.is_blocked() %}
+        {% set css_class='danger' %}
+        {% elif call_record.is_missed() %}
+        {% set css_class='' %}
+        {% elif call_record.is_answered() %}
+        {% set css_class='success' %}
+        {% endif %}
+
+        {# the following presentation is for bigger displays like computers and tablets. #}
+        <tr class="{{css_class}} hidden-xs">
+
+            <td>
+                {% if call_record.is_blocked(): %}
+                <div class="status-tag danger"></div>
+                <div class="btn btn-danger btn-xs">abgewiesen</div>
+                {% elif call_record.is_missed(): %}
+                <div class="btn btn-default btn-xs">verpasst</div>
+                {% elif call_record.is_answered(): %}
+                <div class="btn btn-success btn-xs">angenommen</div>
+                ({{call_record.format_billsec()}})
+                {% elif call_record.is_busy(): %}
+                <span class="btn btn-default btn-xs">besetzt</span>
+                {% endif %}
+            </td>
+
+            <td class="telephone_number">
+                {{call_record.local_number()}}
+
+                {% if call_record.blocked_caller: %}
+                <i class="glyphicon glyphicon-ban-circle"></i>
+                {% endif %}
+            </td>
+            <td>
+                {% if call_record.blocked_caller: %}
+                <form action="unblock_caller" method="post">
+                    <input type="hidden" name="telephone_number" value="{{call_record.full_number()}}">
+                    <input type="hidden" name="next_page" value="call_history">
+                    <input class="btn btn-default" type="submit" value="entsperren">
+                </form>
+                {% else: %}
+                <form action="block_caller" method="post">
+                    <input type="hidden" name="telephone_number" value="{{call_record.full_number()}}">
+                    <input type="hidden" name="next_page" value="call_history">
+                    <input class="btn btn-default" type="submit" value="sperren">
+                </form>
+                {% endif %}
+            </td>
+            <td>
+                {{ call_record.start.strftime('%d.%m.%Y %H:%M') }}
+            </td>
+        </tr>
+
+        {# the following presentation is for small displays like smartphones. #}
+        <tr class="{{css_class}}  visible-xs">
+
+            <td class="telephone_number">
+                {% if call_record.is_blocked(): %}
+                <span class="status-tag danger"></span>
+                <span class="btn btn-danger btn-xs">abgewiesen</span>
+                {% elif call_record.is_missed(): %}
+                <span class="btn btn-default btn-xs">verpasst</span>
+                {% elif call_record.is_answered(): %}
+                <span class="btn btn-success btn-xs">angenommen</span>
+                ({{call_record.format_billsec()}})
+                {% elif call_record.is_busy(): %}
+                <span class="btn btn-default btn-xs">besetzt</span>
+                {% endif %}
+                <br>
+
+                <strong>{{call_record.local_number()}}</strong>
+                {% if call_record.blocked_caller: %}
+                <i class="glyphicon glyphicon-ban-circle"></i>
+                {% endif %}
+                <br>
+                <span class="date_time">{{ call_record.start.strftime('%d.%m.%Y %H:%M') }}</span>
+            </td>
+
+            <td>
+                {% if call_record.blocked_caller: %}
+                <form action="unblock_caller" method="post">
+                    <input type="hidden" name="telephone_number" value="{{call_record.full_number()}}">
+                    <input type="hidden" name="next_page" value="call_history">
+                    <input class="btn btn-default" type="submit" value="entsperren">
+                </form>
+                {% else: %}
+                <form action="block_caller" method="post">
+                    <input type="hidden" name="telephone_number" value="{{call_record.full_number()}}">
+                    <input type="hidden" name="next_page" value="call_history">
+                    <input class="btn btn-default" type="submit" value="sperren">
+                </form>
+                {% endif %}
+            </td>
+            <td>
+
+            </td>
+
+
+        </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul class="pagination paginationBottom"></ul>
+</div>
+<script>
+    $(document).ready(function () {
+        // This creates a paged representation of the table and implements filtering.
+        var paginationTopOptions = {
+            name: "paginationTop",
+            paginationClass: "paginationTop",
+            left: 5,
+            right: 2
+        };
+        var paginationBottomOptions = {
+            name: "paginationBottom",
+            paginationClass: "paginationBottom",
+            left: 5,
+            right: 2
+        };
+
+        var options = {
+            valueNames: ['telephone_number'],
+            page: 20,
+            plugins: [
+                ListPagination(paginationTopOptions),
+                ListPagination(paginationBottomOptions)
+            ]
+        };
+
+        var call_history_list = new List('call_history', options);
+
+        $('#showAll').click(function (event) {
+            $('#search').val('');
+            call_history_list.search();
+            event.preventDefault();
+        });
+
+        call_history_list.search($('#search').val())
+
+
+    });
+</script>
+{% endif %}
+
+{% endblock %}

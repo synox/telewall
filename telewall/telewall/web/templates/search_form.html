@@ -1,0 +1,24 @@
+{# This form allowes the user to search a number and check if it is blocked.
+input variables: telephone_number
+#}
+{% extends "base.html" %}
+{% set active_page = "search" %}
+
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <form action="search" method="post">
+            <div class="form-group">
+                <label>Rufnummer:</label>
+                <input class="form-control" name="telephone_number" value="{{telephone_number}}" type="text" placeholder=""/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Status prüfen</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

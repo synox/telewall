@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xml:lang="de" xmlns="http://www.w3.org/2005/Atom" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:tel="http://tel.search.ch/api/spec/result/1.0/">
+  <id>http://tel.search.ch/api/71d769544d4abf2b51e04fff8bd1e5e8/945c13dc8719b226914802b7c2c69056</id>
+  <title type="text">tel.search.ch API Search Results</title>
+  <generator version="1.0" uri="http://tel.search.ch">tel.search.ch</generator>
+  <updated>2015-10-30T03:00:00Z</updated>
+  <link href="http://tel.search.ch/result.html?was=0323216161" rel="alternate" type="text/html" />
+  <link href="http://tel.search.ch/api/?was=+032+321+61+61&amp;key=71d769544d4abf2b51e04fff8bd1e5e8" type="application/atom+xml" rel="self" />
+  <openSearch:totalResults>0</openSearch:totalResults>
+  <openSearch:startIndex>1</openSearch:startIndex>
+  <openSearch:itemsPerPage>10</openSearch:itemsPerPage>
+  <openSearch:Query role="request" searchTerms="0323216161 " startPage="1" />
+  <openSearch:Image height="1" width="1" type="image/gif">http://www.search.ch/audit/CP/tel/de/api</openSearch:Image>
+  <openSearch:Query role="correction" searchTerms="032 321 61 **" totalResults="2" />
+</feed>

@@ -1,0 +1,24 @@
+{# This form allowes the user to block a number.
+input variables: telephone_number, comment
+#}
+{% extends "base.html" %}
+{% set active_page = "unblock_caller" %}
+
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <form action="unblock_caller" method="post">
+            <div class="form-group">
+                <label>Rufnummer:</label>
+                <input class="form-control" name="telephone_number" value="{{telephone_number}}" type="text" placeholder=""/>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Anrufer entsperren</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

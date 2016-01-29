@@ -1,0 +1,61 @@
+{# This pages lists all the blocked callers. Callers may be unblocked by clicking a link.
+input variables: blocked_callers
+#}
+{% extends "base.html" %}
+{% set active_page = "blocked_callers" %}
+
+{% block content %}
+
+
+{% if not blocked_callers: %}
+Es wurden noch keine Anrufer gesperrt. Klicken Sie auf <a href="{{url_for('block_caller')}}">Anrufer sperren</a>.
+{% else: %}
+
+{{render_pagination(pagination)}}
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Rufnummer</th>
+        <th>gesperrt am</th>
+        <th>Aktion</th>
+    </tr>
+    </thead>
+    <tbody class="list">
+    {% for caller in blocked_callers: %}
+    <tr>
+        <td class="telephone_number">{{caller.national_telephone_number()}} <i
+                class="glyphicon glyphicon-ban-circle"></i>
+
+            {% if caller.source not in ('dtmf', 'button', 'web'): %}
+            ({{caller.source}})
+            {% endif %}
+
+            {% set comment = caller.comment %}
+            {% if comment: %}
+            <br><span class="caller-comment">"{{comment}}"</span>
+            {% endif %}
+
+        </td>
+        <td class="date">{{ caller.created.strftime('%d.%m.%Y') }}</td>
+
+
+        <td>
+            <form action="unblock_caller" method="post">
+                <input type="hidden" name="telephone_number" value="{{caller.telephone_number}}">
+                <input class="btn btn-default" type="submit" value="Anrufer entsperren">
+            </form>
+
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{{render_pagination(pagination)}}
+
+<p class="footer_soure">Einträge mit (ktipp) wurden in der Sperrliste von Konsumenteninfo AG/KTipp erfasst.</p>
+
+{% endif %}
+
+
+{% endblock %}

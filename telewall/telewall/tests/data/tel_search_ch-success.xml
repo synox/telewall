@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xml:lang="de" xmlns="http://www.w3.org/2005/Atom" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:tel="http://tel.search.ch/api/spec/result/1.0/">
+  <id>http://tel.search.ch/api/71d769544d4abf2b51e04fff8bd1e5e8/b811455fe5eb63105d6eccd5879a9af9</id>
+  <title type="text">tel.search.ch API Search Results</title>
+  <generator version="1.0" uri="http://tel.search.ch">tel.search.ch</generator>
+  <updated>2015-10-30T03:00:00Z</updated>
+  <link href="http://tel.search.ch/result.html?was=032321611" rel="alternate" type="text/html" />
+  <link href="http://tel.search.ch/api/?was=+032+321+61+1&amp;key=71d769544d4abf2b51e04fff8bd1e5e8" type="application/atom+xml" rel="self" />
+  <openSearch:totalResults>2</openSearch:totalResults>
+  <openSearch:startIndex>1</openSearch:startIndex>
+  <openSearch:itemsPerPage>10</openSearch:itemsPerPage>
+  <openSearch:Query role="request" searchTerms="032321611 " startPage="1" />
+  <openSearch:Image height="1" width="1" type="image/gif">http://www.search.ch/audit/CP/tel/de/api</openSearch:Image>
+  <entry>
+    <id>urn:uuid:d63e481f5b29aa6b</id>
+    <updated>2015-10-30T03:00:00Z</updated>
+    <published>2015-10-30T03:00:00Z</published>
+    <title type="text">Berner Fachhochschule, Technik &amp; Informatik</title>
+    <content type="text">Berner Fachhochschule, Technik &amp; Informatik
+    Quellgasse 21
+    2502 Biel/Bienne/BE
+    032 321 61 11</content>
+    <author>
+      <name>tel.search.ch</name>
+    </author>
+    <link href="http://tel.search.ch/biel-bienne/quellgasse-21/berner-fachhochschule-technik-informatik" title="Details" rel="alternate" type="text/html" />
+    <link href="http://tel.search.ch/vcard/Berner-Fachhochschule-Technik--Informatik.vcf?key=d63e481f5b29aa6b" type="text/x-vcard" title="VCard Download" rel="alternate" />
+    <link href="http://tel.search.ch/edit/?id=d63e481f5b29aa6b" rel="edit" type="text/html" />
+    <tel:pos>1</tel:pos>
+    <tel:id>d63e481f5b29aa6b</tel:id>
+    <tel:type>Organisation</tel:type>
+    <tel:name>Berner Fachhochschule, Technik &amp; Informatik</tel:name>
+    <tel:street>Quellgasse</tel:street>
+    <tel:streetno>21</tel:streetno>
+    <tel:zip>2502</tel:zip>
+    <tel:city>Biel/Bienne</tel:city>
+    <tel:canton>BE</tel:canton>
+    <tel:category>Fachhochschule Hochschule</tel:category>
+    <tel:category>Berufsfachschule Berufsschule</tel:category>
+    <tel:phone>+41323216111</tel:phone>
+    <tel:extra type="website">http://www.ti.bfh.ch</tel:extra>
+    <tel:copyright>Daten: Swisscom Directories AG</tel:copyright>
+  </entry>
+  <entry>
+    <id>urn:uuid:408ce5093300afe0</id>
+    <updated>2015-10-30T03:00:00Z</updated>
+    <published>2015-10-30T03:00:00Z</published>
+    <title type="text">Berner Fachhochschule, Technik und Informatik</title>
+    <content type="text">Berner Fachhochschule, Technik und Informatik
+    Quellgasse 21
+    2502 Biel/Bienne/BE
+    032 321 61 11</content>
+    <author>
+      <name>tel.search.ch</name>
+    </author>
+    <link href="http://tel.search.ch/biel-bienne/quellgasse-21/berner-fachhochschule-technik-und-informatik" title="Details" rel="alternate" type="text/html" />
+    <link href="http://tel.search.ch/vcard/Berner-Fachhochschule-Technik-und-Informatik.vcf?key=408ce5093300afe0" type="text/x-vcard" title="VCard Download" rel="alternate" />
+    <link href="http://tel.search.ch/edit/?id=408ce5093300afe0" rel="edit" type="text/html" />
+    <tel:pos>2</tel:pos>
+    <tel:id>408ce5093300afe0</tel:id>
+    <tel:type>Organisation</tel:type>
+    <tel:name>Berner Fachhochschule, Technik und Informatik</tel:name>
+    <tel:street>Quellgasse</tel:street>
+    <tel:streetno>21</tel:streetno>
+    <tel:pobox>Postfach</tel:pobox>
+    <tel:poboxzip>2501</tel:poboxzip>
+    <tel:poboxcity>Biel/Bienne</tel:poboxcity>
+    <tel:zip>2502</tel:zip>
+    <tel:city>Biel/Bienne</tel:city>
+    <tel:canton>BE</tel:canton>
+    <tel:category>Fachhochschule Hochschule</tel:category>
+    <tel:phone>+41323216111</tel:phone>
+    <tel:extra type="Fax">+41323216500</tel:extra>
+    <tel:extra type="website">http://www.ti.bfh.ch</tel:extra>
+    <tel:extra type="Direktion Fax">+41323216504</tel:extra>
+    <tel:extra type="Fachbereich Automobiltechnik">+41323216650</tel:extra>
+    <tel:extra type="DTC Dynamic Test Center">+41323216600</tel:extra>
+    <tel:extra type="Abgasprüfstelle">+41323216680</tel:extra>
+    <tel:extra type="Wissens- und Technologietransfer">+41323216464</tel:extra>
+    <tel:copyright>Daten: Swisscom Directories AG</tel:copyright>
+  </entry>
+</feed>

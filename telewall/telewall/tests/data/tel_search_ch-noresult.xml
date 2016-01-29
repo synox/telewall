@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xml:lang="de" xmlns="http://www.w3.org/2005/Atom" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/" xmlns:tel="http://tel.search.ch/api/spec/result/1.0/">
+  <id>http://tel.search.ch/api/71d769544d4abf2b51e04fff8bd1e5e8/f057e9604398d5b878928f4412b94d54</id>
+  <title type="text">tel.search.ch API Search Results</title>
+  <generator version="1.0" uri="http://tel.search.ch">tel.search.ch</generator>
+  <updated>2015-12-04T03:00:00Z</updated>
+  <link href="http://tel.search.ch/result.html?was=0310001122" rel="alternate" type="text/html" />
+  <link href="http://tel.search.ch/api/?was=+031+000+11+22&amp;key=71d769544d4abf2b51e04fff8bd1e5e8" type="application/atom+xml" rel="self" />
+  <openSearch:totalResults>0</openSearch:totalResults>
+  <openSearch:startIndex>1</openSearch:startIndex>
+  <openSearch:itemsPerPage>10</openSearch:itemsPerPage>
+  <openSearch:Query role="request" searchTerms="0310001122 " startPage="1" />
+  <openSearch:Image height="1" width="1" type="image/gif">http://www.search.ch/audit/CP/tel/de/api</openSearch:Image>
+  <tel:tip text="Überprüfen Sie bitte die Schreibweise." />
+</feed>
